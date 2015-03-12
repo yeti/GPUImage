@@ -691,6 +691,10 @@
     {
         [displayLink invalidate]; // remove from all run loops
         displayLink = nil;
+      
+      if (playerItemOutput != nil) {
+        [self.playerItem removeOutput:playerItemOutput];
+      }
     }
 
     if ([self.delegate respondsToSelector:@selector(didCompletePlayingMovie)]) {
